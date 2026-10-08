@@ -1,0 +1,6 @@
+#!/bin/sh
+# Thin executable entry point required by the project specification.
+ROOT="${1:-./www}"
+PORT="${2:-9000}"
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+exec python3 "$SCRIPT_DIR/server.py" --root "$ROOT" --port "$PORT"
